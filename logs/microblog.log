@@ -1,15 +1,4 @@
-2019-03-12 21:42:34,777 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
-2019-03-12 21:50:54,904 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
-2019-03-12 21:51:27,207 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
-2019-03-12 21:54:21,959 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
-2019-03-12 21:54:37,581 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
-2019-03-13 00:00:34,415 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
-2019-03-13 00:02:27,465 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
-2019-03-13 00:08:36,790 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
-2019-03-13 00:09:25,557 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
-2019-03-13 00:10:07,606 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
-2019-03-13 00:28:54,014 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
-2019-03-13 00:29:12,523 ERROR: Exception on /user/Brie Larson [GET] [in /Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2019-03-13 01:10:51,119 ERROR: Exception on /index [POST] [in /Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -25,39 +14,19 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/shaquillewyanque/git/microblog/app/routes.py", line 89, in user
-    return render_template('user.html', user=user, posts=posts)
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 135, in render_template
-    context, ctx.app)
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 117, in _render
-    rv = template.render(context)
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/shaquillewyanque/git/microblog/app/templates/user.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/Users/shaquillewyanque/git/microblog/app/templates/base.html", line 29, in top-level template code
-    {% block content %}{% endblock %}
-  File "/Users/shaquillewyanque/git/microblog/app/templates/user.html", line 14, in block "content"
-    <p><a href="{{ url_for('follow')}}">Follow</a></p>
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/helpers.py", line 356, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2061, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/helpers.py", line 345, in url_for
-    force_external=external)
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'follow'. Did you forget to specify values ['username']?
-2019-03-13 00:29:35,235 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
-2019-03-13 00:29:37,071 ERROR: Exception on /user/Brie Larson [GET] [in /Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+  File "/Users/shaquillewyanque/git/microblog/app/routes.py", line 21, in index
+    post = Post(body=form.body.data, author=current_user)
+AttributeError: 'PostForm' object has no attribute 'body'
+2019-03-13 01:12:02,521 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
+2019-03-13 01:16:58,742 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
+2019-03-13 01:17:39,109 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
+2019-03-13 01:19:28,665 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
+2019-03-13 01:21:12,905 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
+2019-03-13 11:13:16,128 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
+2019-03-13 11:26:09,057 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
+2019-03-13 11:26:49,336 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
+2019-03-13 11:29:28,390 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
+2019-03-13 11:30:02,993 ERROR: Exception on /user/Brie Larson [GET] [in /Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -73,7 +42,7 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/shaquillewyanque/git/microblog/app/routes.py", line 89, in user
+  File "/Users/shaquillewyanque/git/microblog/app/routes.py", line 98, in user
     return render_template('user.html', user=user, posts=posts)
   File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 135, in render_template
     context, ctx.app)
@@ -89,21 +58,9 @@ Traceback (most recent call last):
     raise value.with_traceback(tb)
   File "/Users/shaquillewyanque/git/microblog/app/templates/user.html", line 1, in top-level template code
     {% extends 'base.html' %}
-  File "/Users/shaquillewyanque/git/microblog/app/templates/base.html", line 29, in top-level template code
+  File "/Users/shaquillewyanque/git/microblog/app/templates/base.html", line 30, in top-level template code
     {% block content %}{% endblock %}
-  File "/Users/shaquillewyanque/git/microblog/app/templates/user.html", line 14, in block "content"
-    <p><a href="{{ url_for('follow') }}">Follow</a></p>
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/helpers.py", line 356, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2061, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/flask/helpers.py", line 345, in url_for
-    force_external=external)
-  File "/Users/shaquillewyanque/git/microblog/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'follow'. Did you forget to specify values ['username']?
-2019-03-13 00:30:11,749 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
-2019-03-13 00:33:26,599 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
-2019-03-13 00:34:11,797 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
+  File "/Users/shaquillewyanque/git/microblog/app/templates/user.html", line 23, in block "content"
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2019-03-13 11:38:11,976 INFO: Microblog startup [in /Users/shaquillewyanque/git/microblog/app/__init__.py:43]
